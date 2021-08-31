@@ -1,7 +1,7 @@
 %%
 
 %unicode
-%class Lexer
+%class adalexer
 %line
 %column
 %int
