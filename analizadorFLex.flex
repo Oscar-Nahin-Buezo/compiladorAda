@@ -63,10 +63,10 @@
     rightlabel=">>"
     box="<>"
     NotEQUAL= ("/"){equal}
-//Variable
+//Variables 
     LETRA= [a-zA-Z]
     NUMERO=[0-9]
-    IDENTIFICADOR= {LETRA}+({NUMERO}|{guion_bajo}|{LETRA})*// se pueden declarar varias variables seguidas de "," ejem: total, subtotal: Float;
+    IDENTIFICADOR= {LETRA}+({NUMERO}|{guion_bajo}|{LETRA})*
     STRING = \"({LETRA}|{NUMERO})*\"
 
     ENTERO = [1-9][0-9]* | 0
