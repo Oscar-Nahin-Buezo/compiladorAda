@@ -27,11 +27,11 @@
     espacio=" "
     punto= "."
     coma= ","
-    guion="-"
+    guion="--"
     guion_bajo="_"
 
     ampersand = "&"
-    apostrofe = "'"
+    apostrofe = "'"|\"
     numeral = "#"
 
     leftParentesis = "("
@@ -47,19 +47,13 @@
     OPERADOR_RESTA ="-"
     OPERADOR_MULTIPLICACION ="*"
     OPERADOR_DIVISION = "/"
-    OPERADOR_MODULO = "mod"
-    OPERADOR_REM = "rem"
     OPERADOR_MAYOR_QUE = ">"
     OPERADOR_MENOR_QUE = "<"
     OPERADOR_IGUALDAD = "=="
     OPERADOR_MAYOR_IGUAL =">="
     OPERADOR_MENOR_IGUAL = "<="
     OPERADOR_DIVISOR ="/="
-    OPERADOR_AND = "and"
-    OPERADOR_OR ="or"
-    OPERADOR_XOR ="xor"
-    OPERADOR_XAND ="xand"
-    OPERADOR_BOOLEANO = "true" | "false"
+    OPERADOR_BOOLEANO = ("true")|("false")
 //Delimitadores
     ASIGNACION = {dos_puntos}{equal}
     flecha = "=>"
@@ -128,11 +122,11 @@
 
 
     //Operadores
+    {PALABRA_RESERVADA} {System.out.println(yytext() +"\t\t PALABRA RESERVADA");}
     {ASIGNACION} {System.out.println(yytext() +"\t\t ASIGNACION");}
     {OPERADOR_SUMA} {System.out.println(yytext() +"\t\t OPERADOR DE SUMA");}
     {OPERADOR_RESTA} {System.out.println(yytext() +"\t\t OPERADOR DE RESTA");}
     {OPERADOR_MULTIPLICACION} {System.out.println(yytext() +"\t\t OPERADOR DE MULTIPLICACION");}
-    {OPERADOR_REM} {System.out.println(yytext() +"\t\t OPERADOR REM");return symbol(sym.OPERADOR_REM);}
     {OPERADOR_DIVISION} {System.out.println(yytext() +"\t\t OPERADOR DE DIVISION");}
     {OPERADOR_MAYOR_QUE} {System.out.println(yytext() +"\t\t OPERADOR MAYOR QUE ");}
     {OPERADOR_MENOR_QUE} {System.out.println(yytext() +"\t\t OPERADOR MENOR QUE ");}
@@ -140,10 +134,6 @@
     {OPERADOR_MAYOR_IGUAL} {System.out.println(yytext() +"\t\t OPERADOR MAYOR O IGUAL ");}
     {OPERADOR_MENOR_IGUAL} {System.out.println(yytext() +"\t\t OPERADOR MENOR O IGUAL ");}
     {OPERADOR_DIVISOR} {System.out.println(yytext() +"\t\t OPERADOR DEVISOR O ESCALABILIDAD ");}
-    {OPERADOR_AND} {System.out.println(yytext() +"\t\t OPERADOR AND ");}
-    {OPERADOR_OR} {System.out.println(yytext() +"\t\t OPERADOR OR ");}
-    {OPERADOR_XOR} {System.out.println(yytext() +"\t\t OPERADOR XOR ");}
-    {OPERADOR_XAND} {System.out.println(yytext() +"\t\t OPERADOR XAND ");}
     {OPERADOR_BOOLEANO} {System.out.println(yytext() +"\t\t OPERADOR BOOLEANO ");}
     {espacio} {}
     . {System.out.println(yytext() + "\t\t ERROR");}
