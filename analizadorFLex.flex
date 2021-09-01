@@ -9,12 +9,7 @@
 
 
 //Palabras Reservadas para ADA
-    PALABRA_RESERVADA = ("abort"|"else"|"new" |"return"|"abs"|"elsif"|"not"|"reverse"|"abstract"|"end"|"null"|"accept"|
-                "entry"	|"select"|"access"|"exception"|"of"|"separate"|"aliased"|"exit"|"or"|"all" |"others"|"subtype"|
-                "and"|"for"|"out"|"array"|"function"|"at"|"tagged"|"generic"|"package"|"task"|"begin"|"goto"|"pragma"|"terminate"|
-                "body"|"private"|"then"|"if"|"procedure"|"type"|"case"|"in"|"protected"|"constant"|"until"|"is"|"raise"|"use"|
-                "declare"|"range"|"delay"|"limited"|"record"|"when"|"delta"|"loop"|"rem"|"while"|"digits"|"renames"|"with"|
-                "do"|"mod"|"requeue"|"xor")
+    PALABRA_RESERVADA = "abort"|"else"|"new" |"return"|"abs"|"elsif"|"not"|"reverse"|"abstract"|"end"|"null"|"accept"|"entry"|"select"|"access"|"exception"|"of"|"separate"|"aliased"|"exit"|"or"|"all" |"others"|"subtype"|"and"|"for"|"out"|"array"|"function"|"at"|"tagged"|"generic"|"package"|"task"|"begin"|"goto"|"pragma"|"terminate"|"body"|"private"|"then"|"if"|"procedure"|"type"|"case"|"in"|"protected"|"constant"|"until"|"is"|"raise"|"use"|"declare"|"range"|"delay"|"limited"|"record"|"when"|"delta"|"loop"|"rem"|"while"|"digits"|"renames"|"with"|"do"|"mod"|"requeue"|"xor"
 
     dataType =("Integer" |"Float" | "Character" | "String" | "array" | "Array")
 //lectura y escritura
@@ -53,7 +48,7 @@
     OPERADOR_MAYOR_IGUAL =">="
     OPERADOR_MENOR_IGUAL = "<="
     OPERADOR_DIVISOR ="/="
-    OPERADOR_BOOLEANO = ("true")|("false")
+    OPERADOR_BOOLEANO = ["true"|"false"]
 //Delimitadores
     ASIGNACION = {dos_puntos}{equal}
     flecha = "=>"
@@ -119,10 +114,6 @@
     {rightlabel} {System.out.println(yytext() + "\t\t RIGHT LABEL");}
 
     {box} {System.out.println(yytext() + "\t\t BOX");}
-
-
-  
-    {PALABRA_RESERVADA} {System.out.println(yytext() +"\t\t PALABRA RESERVADA");}
     {ASIGNACION} {System.out.println(yytext() +"\t\t ASIGNACION");}
     {OPERADOR_SUMA} {System.out.println(yytext() +"\t\t OPERADOR DE SUMA");}
     {OPERADOR_RESTA} {System.out.println(yytext() +"\t\t OPERADOR DE RESTA");}
