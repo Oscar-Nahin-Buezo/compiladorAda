@@ -1,9 +1,12 @@
---Programa simple en Ada
-with Text_IO; --cláusula de contexto
-
-procedure Hola is --procedimiento principal
-    --Parte de declaraciones
-begin
-    --Cuerpo de sentencias ejecutables
-    Text_IO.Put_Line("Hola");
-end Hola;
+generic
+  ValorInicial: Natural := 1;  -- Parametro generico con valor por defecto.
+ package Semaforos is
+  type TSemaforo is limited private;
+  procedure Wait (Sem: in out TSemaforo);
+  procedure Signal (Sem: in out TSemaforo);
+private
+  task type TSemaforo is
+    entry Wait;
+    entry Signal;
+  end TSemaforo;
+end Semaforos;

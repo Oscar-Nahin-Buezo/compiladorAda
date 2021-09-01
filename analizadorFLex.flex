@@ -66,6 +66,7 @@
 
     ENTERO = [1-9][0-9]* | 0
     DECIMAL= {NUMERO} ({punto}{NUMERO}*)?
+    COMENTARIO = {guion}({LETRA}|{NUMERO}|\s|{guion_bajo})*
 %%
 
 <YYINITIAL> {
@@ -114,6 +115,7 @@
     {rightlabel} {System.out.println(yytext() + "\t\t RIGHT LABEL");}
 
     {box} {System.out.println(yytext() + "\t\t BOX");}
+    {COMENTARIO} {System.out.println(yytext() + "\t\t COMENTARIO");}
     {ASIGNACION} {System.out.println(yytext() +"\t\t ASIGNACION");}
     {OPERADOR_SUMA} {System.out.println(yytext() +"\t\t OPERADOR DE SUMA");}
     {OPERADOR_RESTA} {System.out.println(yytext() +"\t\t OPERADOR DE RESTA");}
